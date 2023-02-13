@@ -20,6 +20,14 @@ class SendCsv():
        str_date = self.send.check_folder(self,'categories.csv')
        df.to_csv(str_date, index = False, header=True)
        
+    def send_customer_customer_demo_csv(self):
+       df_dbase = []
+       for dataframe in self.conn.select(self,(self.query.select_customer_customer_demo(self))):
+            df_dbase.append(dataframe)
+       df = pd.DataFrame(df_dbase, columns= ['customer_id', 'customer_type_id'])
+       str_date = self.send.check_folder(self,'customer_customer_demo.csv')
+       df.to_csv(str_date, index = False, header=True)
+       
     def send_customers_csv(self):
        df_dbase = []
        for dataframe in self.conn.select(self,(self.query.select_customers(self))):
@@ -115,5 +123,5 @@ class SendCsv():
        return str_date
        
 
-SendCsv().send_us_states_csv()
+SendCsv().send_customer_customer_demo_csv()
 
