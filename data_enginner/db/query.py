@@ -14,6 +14,13 @@ class Query():
         except Exception as e:
             print(e)
             
+    def select_customer_demographics(self):
+        try:
+            sql = "SELECT * FROM customer_demographics "
+            return sql
+        except Exception as e:
+            print(e)
+            
     def select_customers(self):
         try:
             sql = "SELECT * FROM customers "
