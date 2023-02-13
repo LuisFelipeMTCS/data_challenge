@@ -1,6 +1,6 @@
 import pandas as pd
-from db.query import Query
-from db.conn import Conn
+from db.postgres.query import Query
+from db.postgres.conn import Conn
 from check_folder import CheckFolder
 
 class ImportCsv():
