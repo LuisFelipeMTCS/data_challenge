@@ -1,4 +1,6 @@
 from import_csv import ImportCsv
+import MySQLdb
+
 
 
 class Main():
