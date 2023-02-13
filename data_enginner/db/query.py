@@ -70,3 +70,10 @@ class Query():
         except Exception as e:
             print(e)
             
+    def select_us_states(self):
+        try:
+            sql = "SELECT * FROM us_states"
+            return sql
+        except Exception as e:
+            print(e)
+            

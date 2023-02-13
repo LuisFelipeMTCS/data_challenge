@@ -98,6 +98,14 @@ class SendCsv():
        str_date = self.send.check_folder(self,'territories.csv')
        df.to_csv(str_date, index = False, header=True)
        
+    def send_us_states_csv(self):
+       df_dbase = []
+       for dataframe in self.conn.select(self,(self.query.select_us_states(self))):
+            df_dbase.append(dataframe)
+       df = pd.DataFrame(df_dbase, columns= ['state_id', 'state_name', 'state_abbr', 'state_region'])
+       str_date = self.send.check_folder(self,'us_states.csv')
+       df.to_csv(str_date, index = False, header=True)
+       
        
     def check_folder(self,file):
        time = date.today()
@@ -107,5 +115,5 @@ class SendCsv():
        return str_date
        
 
-SendCsv().send_territories_csv()
+SendCsv().send_us_states_csv()
 
