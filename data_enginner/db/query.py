@@ -35,3 +35,17 @@ class Query():
         except Exception as e:
             print(e)
             
+    def select_products(self):
+        try:
+            sql = "SELECT * FROM products"
+            return sql
+        except Exception as e:
+            print(e)
+            
+    def select_region(self):
+        try:
+            sql = "SELECT * FROM region"
+            return sql
+        except Exception as e:
+            print(e)
+            

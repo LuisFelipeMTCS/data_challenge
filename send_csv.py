@@ -56,6 +56,23 @@ class SendCsv():
        str_date = self.send.check_folder(self,'orders.csv')
        df.to_csv(str_date, index = False, header=True)
        
+    def send_products_csv(self):
+       df_dbase = []
+       for dataframe in self.conn.select(self,(self.query.select_products(self))):
+            df_dbase.append(dataframe)
+       df = pd.DataFrame(df_dbase, columns= ['product_id', 'product_name', 'supplier_id', 'category_id', 'quantity_per_unit', 
+                                             'unit_price', 'units_in_stock', 'units_on_order', 'reorder_level', 'discontinued'])
+       str_date = self.send.check_folder(self,'products.csv')
+       df.to_csv(str_date, index = False, header=True)
+       
+    def send_region_csv(self):
+       df_dbase = []
+       for dataframe in self.conn.select(self,(self.query.select_region(self))):
+            df_dbase.append(dataframe)
+       df = pd.DataFrame(df_dbase, columns= ['region_id', 'region_description'])
+       str_date = self.send.check_folder(self,'region.csv')
+       df.to_csv(str_date, index = False, header=True)
+       
        
     def check_folder(self,file):
        time = date.today()
@@ -65,5 +82,5 @@ class SendCsv():
        return str_date
        
 
-SendCsv().send_orders_csv()
+SendCsv().send_region_csv()
 
