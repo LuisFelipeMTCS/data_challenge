@@ -49,3 +49,10 @@ class Query():
         except Exception as e:
             print(e)
             
+    def select_shippers(self):
+        try:
+            sql = "SELECT * FROM shippers"
+            return sql
+        except Exception as e:
+            print(e)
+            

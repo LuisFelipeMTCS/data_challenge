@@ -73,6 +73,14 @@ class SendCsv():
        str_date = self.send.check_folder(self,'region.csv')
        df.to_csv(str_date, index = False, header=True)
        
+    def send_shippers_csv(self):
+       df_dbase = []
+       for dataframe in self.conn.select(self,(self.query.select_shippers(self))):
+            df_dbase.append(dataframe)
+       df = pd.DataFrame(df_dbase, columns= ['shipper_id', 'company_name', 'phone'])
+       str_date = self.send.check_folder(self,'shippers.csv')
+       df.to_csv(str_date, index = False, header=True)
+       
        
     def check_folder(self,file):
        time = date.today()
@@ -82,5 +90,5 @@ class SendCsv():
        return str_date
        
 
-SendCsv().send_region_csv()
+SendCsv().send_shippers_csv()
 
