@@ -14,3 +14,10 @@ class Query():
         except Exception as e:
             print(e)
             
+    def select_employee_territories(self):
+        try:
+            sql = "SELECT * FROM employee_territories"
+            return sql
+        except Exception as e:
+            print(e)
+            
