@@ -7,3 +7,10 @@ class Query():
         except Exception as e:
             print(e)
             
+    def select_customers(self):
+        try:
+            sql = "SELECT * FROM customers "
+            return sql
+        except Exception as e:
+            print(e)
+            
