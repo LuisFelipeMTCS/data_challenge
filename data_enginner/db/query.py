@@ -56,3 +56,17 @@ class Query():
         except Exception as e:
             print(e)
             
+    def select_suppliers(self):
+        try:
+            sql = "SELECT * FROM suppliers"
+            return sql
+        except Exception as e:
+            print(e)
+            
+    def select_territories(self):
+        try:
+            sql = "SELECT * FROM territories"
+            return sql
+        except Exception as e:
+            print(e)
+            
