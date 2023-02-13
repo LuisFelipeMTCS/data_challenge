@@ -3,16 +3,16 @@ from db.query import Query
 from db.conn import Conn
 from check_folder import CheckFolder
 
-class SendCsv():
+class ImportCsv():
     
     def __init__(self):
         self.conn = Conn
         self.query = Query
-        self.CheckFolder = SendCsv
+        self.CheckFolder = ImportCsv
         self.CheckFolder = CheckFolder
         
         
-    def send_categories_csv(self):
+    def import_categories_csv(self):
        df_dbase = []
        for dataframe in self.conn.select(self,(self.query.select_categories(self))):
             df_dbase.append(dataframe)
@@ -20,7 +20,7 @@ class SendCsv():
        str_date = self.CheckFolder.check_folder_csv(self,'categories.csv')
        df.to_csv(str_date, index = False, header=True)
        
-    def send_customer_customer_demo_csv(self):
+    def import_customer_customer_demo_csv(self):
        df_dbase = []
        for dataframe in self.conn.select(self,(self.query.select_customer_customer_demo(self))):
             df_dbase.append(dataframe)
@@ -28,7 +28,7 @@ class SendCsv():
        str_date = self.CheckFolder.check_folder_csv(self,'customer_customer_demo.csv')
        df.to_csv(str_date, index = False, header=True)
        
-    def send_customer_demographics_csv(self):
+    def import_customer_demographics_csv(self):
        df_dbase = []
        for dataframe in self.conn.select(self,(self.query.select_customer_demographics(self))):
             df_dbase.append(dataframe)
@@ -36,7 +36,7 @@ class SendCsv():
        str_date = self.CheckFolder.check_folder_csv(self,'customer_demographics.csv')
        df.to_csv(str_date, index = False, header=True)
        
-    def send_customers_csv(self):
+    def import_customers_csv(self):
        df_dbase = []
        for dataframe in self.conn.select(self,(self.query.select_customers(self))):
             df_dbase.append(dataframe)
@@ -44,7 +44,7 @@ class SendCsv():
        str_date = self.CheckFolder.check_folder_csv(self,'customers.csv')
        df.to_csv(str_date, index = False, header=True)
        
-    def send_employee_territories_csv(self):
+    def import_employee_territories_csv(self):
        df_dbase = []
        for dataframe in self.conn.select(self,(self.query.select_employee_territories(self))):
             df_dbase.append(dataframe)
@@ -52,7 +52,7 @@ class SendCsv():
        str_date = self.CheckFolder.check_folder_csv(self,'employee_territories.csv')
        df.to_csv(str_date, index = False, header=True)
        
-    def send_employees_csv(self):
+    def import_employees_csv(self):
        df_dbase = []
        for dataframe in self.conn.select(self,(self.query.select_employees(self))):
             df_dbase.append(dataframe)
@@ -62,7 +62,7 @@ class SendCsv():
        str_date = self.CheckFolder.check_folder_csv(self,'employees.csv')
        df.to_csv(str_date, index = False, header=True)
        
-    def send_orders_csv(self):
+    def import_orders_csv(self):
        df_dbase = []
        for dataframe in self.conn.select(self,(self.query.select_orders(self))):
             df_dbase.append(dataframe)
@@ -72,7 +72,7 @@ class SendCsv():
        str_date = self.CheckFolder.check_folder_csv(self,'orders.csv')
        df.to_csv(str_date, index = False, header=True)
        
-    def send_products_csv(self):
+    def import_products_csv(self):
        df_dbase = []
        for dataframe in self.conn.select(self,(self.query.select_products(self))):
             df_dbase.append(dataframe)
@@ -81,7 +81,7 @@ class SendCsv():
        str_date = self.CheckFolder.check_folder_csv(self,'products.csv')
        df.to_csv(str_date, index = False, header=True)
        
-    def send_region_csv(self):
+    def import_region_csv(self):
        df_dbase = []
        for dataframe in self.conn.select(self,(self.query.select_region(self))):
             df_dbase.append(dataframe)
@@ -89,7 +89,7 @@ class SendCsv():
        str_date = self.CheckFolder.check_folder_csv(self,'region.csv')
        df.to_csv(str_date, index = False, header=True)
        
-    def send_shippers_csv(self):
+    def import_shippers_csv(self):
        df_dbase = []
        for dataframe in self.conn.select(self,(self.query.select_shippers(self))):
             df_dbase.append(dataframe)
@@ -97,7 +97,7 @@ class SendCsv():
        str_date = self.CheckFolder.check_folder_csv(self,'shippers.csv')
        df.to_csv(str_date, index = False, header=True)
        
-    def send_suppliers_csv(self):
+    def import_suppliers_csv(self):
        df_dbase = []
        for dataframe in self.conn.select(self,(self.query.select_suppliers(self))):
             df_dbase.append(dataframe)
@@ -106,7 +106,7 @@ class SendCsv():
        str_date = self.CheckFolder.check_folder_csv(self,'suppliers.csv')
        df.to_csv(str_date, index = False, header=True)
        
-    def send_territories_csv(self):
+    def import_territories_csv(self):
        df_dbase = []
        for dataframe in self.conn.select(self,(self.query.select_territories(self))):
             df_dbase.append(dataframe)
@@ -114,7 +114,7 @@ class SendCsv():
        str_date = self.CheckFolder.check_folder_csv(self,'territories.csv')
        df.to_csv(str_date, index = False, header=True)
        
-    def send_us_states_csv(self):
+    def import_us_states_csv(self):
        df_dbase = []
        for dataframe in self.conn.select(self,(self.query.select_us_states(self))):
             df_dbase.append(dataframe)
@@ -124,5 +124,5 @@ class SendCsv():
        
        
 
-SendCsv().send_customer_demographics_csv()
+ImportCsv().import_customer_demographics_csv()
 
