@@ -21,3 +21,17 @@ class Query():
         except Exception as e:
             print(e)
             
+    def select_employees(self):
+        try:
+            sql = "SELECT * FROM employees"
+            return sql
+        except Exception as e:
+            print(e)
+            
+    def select_orders(self):
+        try:
+            sql = "SELECT * FROM orders"
+            return sql
+        except Exception as e:
+            print(e)
+            

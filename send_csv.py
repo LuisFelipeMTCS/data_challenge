@@ -36,12 +36,24 @@ class SendCsv():
        str_date = self.send.check_folder(self,'employee_territories.csv')
        df.to_csv(str_date, index = False, header=True)
        
-    def send_employee_territories_csv(self):
+    def send_employees_csv(self):
        df_dbase = []
-       for dataframe in self.conn.select(self,(self.query.select_employee_territories(self))):
+       for dataframe in self.conn.select(self,(self.query.select_employees(self))):
             df_dbase.append(dataframe)
-       df = pd.DataFrame(df_dbase, columns= ['employee_id', 'territory_id'])
-       str_date = self.send.check_folder(self,'employee_territories.csv')
+       df = pd.DataFrame(df_dbase, columns= ['employee_id', 'last_name', 'first_name', 'title', 'title_of_courtesy', 'birth_date', 'hire_date', 
+                                             'address', 'city', 'region', 'postal_code','country', 'home_phone', 'extension', 'photo', 'notes', 
+                                             'reports_to', 'photo_path'])
+       str_date = self.send.check_folder(self,'employees.csv')
+       df.to_csv(str_date, index = False, header=True)
+       
+    def send_orders_csv(self):
+       df_dbase = []
+       for dataframe in self.conn.select(self,(self.query.select_orders(self))):
+            df_dbase.append(dataframe)
+       df = pd.DataFrame(df_dbase, columns= ['order_id', 'customer_id', 'employee_id', 'order_date', 'required_date', 
+                                             'shipped_date', 'ship_via', 'freight', 'ship_name', 'ship_address', 'ship_city', 
+                                             'ship_region', 'ship_postal_code', 'ship_country'])
+       str_date = self.send.check_folder(self,'orders.csv')
        df.to_csv(str_date, index = False, header=True)
        
        
@@ -53,5 +65,5 @@ class SendCsv():
        return str_date
        
 
-SendCsv().send_employee_territories_csv()
+SendCsv().send_orders_csv()
 
