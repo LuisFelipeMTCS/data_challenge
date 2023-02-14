@@ -1,5 +1,5 @@
 import mysql.connector
-class Conn:
+class Conn():
   
      
   def conecta_db(self):

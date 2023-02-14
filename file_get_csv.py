@@ -1,15 +1,14 @@
 import pandas as pd
 from db.postgres.query import Query
 from db.postgres.conn import Conn
-from check_folder import CheckFolder
+from file_check_folder import CheckFolder
 
-class ImportCsv():
+class FileGetCsv():
     
     def __init__(self):
         self.conn = Conn
         self.query = Query
-        self.CheckFolder = ImportCsv
-        self.CheckFolder = CheckFolder
+        self.CheckFolder = CheckFolder()
         
         
     def import_categories_csv(self):
@@ -124,5 +123,5 @@ class ImportCsv():
        
        
 
-ImportCsv().import_customer_demographics_csv()
+# FileGetCsv().import_customer_demographics_csv()
 

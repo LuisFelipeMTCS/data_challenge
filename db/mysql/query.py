@@ -1,4 +1,4 @@
-from conn import Conn
+from db.mysql.conn import Conn
 class Query():
     
     def __init__(self):
@@ -106,4 +106,4 @@ class Query():
             print(e)
             
             
-Query().insert_order_details()
+# Query().insert_order_details()

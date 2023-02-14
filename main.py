@@ -1,4 +1,4 @@
-from import_csv import ImportCsv
+from file_get_csv import ImportCsv
 import MySQLdb
 
 
