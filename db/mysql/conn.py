@@ -14,10 +14,11 @@ class Conn:
     except Exception as e:
           print(e)
           
-  def select(self,sql):
-      cur = Conn.conecta_db(self).cursor() 
+  def insert(self,sql):
+      conn = Conn.conecta_db(self)
+      cur = conn.cursor()
       cur.execute(sql)
-      recset = cur.fetchall()
-      return recset
+      conn.commit()
+
     
 
