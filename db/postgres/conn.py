@@ -5,7 +5,8 @@ class Conn:
      
   def conecta_db(self):
     try:
-      con = psycopg2.connect(host='localhost', 
+      con = psycopg2.connect(host='127.0.0.1',
+                            port='5432',
                             dbname='northwind',
                             user='postgres', 
                             password='123')
@@ -19,4 +20,6 @@ class Conn:
       recset = cur.fetchall()
       return recset
     
+    
+Conn().conecta_db()
 

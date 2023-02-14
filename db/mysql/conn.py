@@ -1,14 +1,10 @@
-
- 
-
- 
-
+import mysql.connector
 class Conn:
   
      
   def conecta_db(self):
     try:
-      con = psycopg2.connect(host='localhost', 
+      con = mysql.connector.connect(host='localhost', 
                             dbname='northwind',
                             user='postgres', 
                             password='123')
