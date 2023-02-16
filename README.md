@@ -13,5 +13,12 @@
 * <b>Arquivo file_check_folder.py</b>: Arquivo que verifica se existe um diretório ou não, e envia seu caminho como parâmetro.
 * <b>Diretório db</b>: Realizo conexões e seleciono Querys com o banco de dados postgres e mysql, isso ocorre em diretórios distintos dentro do principal "db".
 * <b>Diretório data</b>: Onde ocorre a importação e exportação de arquivos csv. 
+  
+## :wrench: Tecnologias utilizadas
+* <b>Linguagem de Programação</b>: Python.
+* <b>Banco de dados</b>: Mysql, Postgres. 
+
+
+  
 
 
