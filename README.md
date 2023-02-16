@@ -8,7 +8,7 @@
 ## :books: Funcionalidades
 * <b>Arquivo main.py</b>: Inicialização do projeto com schedule excutando o projeto duas vezes ao dia.
 * <b>Arquivo file_get_csv.py</b>: Exportação de 13 arquivos no formato csv da base de dados Postgres para o disco local "data/postgres/{nome-tabela}/{dia-atual}".
-* <b>Arquivo file_send_csv.py</b>: Envio de 14 arquivos Csv para o Datawarehouse Mysql, juntamente com uma tabela separada "order_details.csv" no diretório "data/csv/{data-atula}" que tem o intuito de realizar uma relação de muitos para muitos no banco de dados northwind.
+* <b>Arquivo file_send_csv.py</b>: Envio de 14 arquivos Csv para o Datawarehouse Mysql, juntamente com uma tabela separada "order_details.csv" no diretório "data/csv/{data-atual}" que tem o intuito de realizar uma relação de muitos para muitos no banco de dados northwind.
 
 
 
