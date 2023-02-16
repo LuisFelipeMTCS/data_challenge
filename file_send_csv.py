@@ -10,45 +10,36 @@ class FileSendCsv():
     
     
     def send_categories_csv(self):
-        values = []
         path = self.CheckFolder.check_folder_db('categories','categories.csv')
         data =  pd.read_csv(path, encoding='utf-8-sig')
         for row in data.values:
             self.insert.insert_categories(data = row)
             
     def send_customer_customer_demo_csv(self):
-        values = []
-        # 
         path = self.CheckFolder.check_folder_db('customer_customer_demo','customer_customer_demo.csv')
         data =  pd.read_csv(path, encoding='utf-8-sig')
         for row in data.values:
             self.insert.insert_customer_customer_demo(data = row)
             
     def send_customer_demographics_csv(self):
-        values = []
-        # 
         path = self.CheckFolder.check_folder_db('customer_demographics','customer_demographics.csv')
         data =  pd.read_csv(path, encoding='utf-8-sig')
         for row in data.values:
             self.insert.insert_customer_demographics(data = row)
             
     def send_customers_csv(self):
-        values = []
         path = self.CheckFolder.check_folder_db('customers','customers.csv')
         data =  pd.read_csv(path, encoding='utf-8-sig')
         for row in data.values:
             self.insert.insert_customers(data = row)
             
     def send_employee_territories_csv(self):
-        values = []
-        # 
         path = self.CheckFolder.check_folder_db('employee_territories','employee_territories.csv')
         data =  pd.read_csv(path, encoding='utf-8-sig')
         for row in data.values:
             self.insert.insert_employee_territories(data = row)
     
     def send_employees_csv(self):
-        values = []
         path = self.CheckFolder.check_folder_db('employees','employees.csv')
         data =  pd.read_csv(path, encoding='utf-8-sig')
         for row in data.values:
@@ -97,14 +88,17 @@ class FileSendCsv():
             self.insert.insert_us_states(data = row)
             
     def send_order_details_csv(self):
-        path = self.CheckFolder.check_folder_db('order_details.csv')
-        data =  pd.read_csv(path, encoding='utf-8-sig')
-        for row in data.values:
-            self.insert.insert_order_details(data = row)
+        path = self.CheckFolder.check_folder_file('order_details.csv')
+        if path == False:
+            print("Arquivo não enviado ao diretório")
+        else:
+            data =  pd.read_csv(path, encoding='utf-8-sig')
+            for row in data.values:
+                self.insert.insert_order_details(data = row)
+        
             
         
         
-FileSendCsv().send_us_states_csv()
         
         
     

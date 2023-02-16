@@ -181,4 +181,19 @@ class Query():
             self.conn.insert(sql)
         except Exception as e:
             print(e)
-# Query().insert_order_details()
+
+    def select_orders_order_detail(self):
+        try:
+            sql = "SELECT "\
+                "tb1.order_id  as 'order',tb1.customer_id  as 'customer',tb1.employee_id as 'employee',"\
+                "tb1.order_date as 'date order',tb1.required_date as 'date required',tb1.ship_via as 'via ship',"\
+                "tb1.freight as 'freight',tb1.ship_name as 'name ship',tb1.ship_address as 'adress ship',"\
+                "tb1.ship_city as 'city ship',tb1.ship_region as 'region ship',tb1.ship_postal_code as 'postal code ship',"\
+                "tb2.product_id as 'cod product',tb2.unit_price as 'price unit',tb2.quantity as 'quantity',tb2.discount as 'discout'"\
+                "FROM mydb.orders tb1 inner join mydb.order_details tb2 on tb1.order_id = tb2.order_id;"
+            return sql
+        except Exception as e:
+            print(e)
+
+
+

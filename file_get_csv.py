@@ -123,5 +123,4 @@ class FileGetCsv():
        
        
 
-# FileGetCsv().import_customers_csv()
 

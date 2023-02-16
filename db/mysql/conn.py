@@ -1,4 +1,5 @@
 import mysql.connector
+import time
 class Conn():
   
      
@@ -19,6 +20,15 @@ class Conn():
       cur = conn.cursor()
       cur.execute(sql)
       conn.commit()
+      
+      
+  def select(self,sql):
+      conn = Conn.conecta_db(self)
+      cur = conn.cursor()
+      cur.execute(sql)
+      recset = cur.fetchall()
+      cur.close()
+      return recset
 
     
 

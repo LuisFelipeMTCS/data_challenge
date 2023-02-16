@@ -29,10 +29,18 @@ class CheckFolder:
       if  (os.path.exists(path)):
          return path
       else:
-         return print("Arquivo não enviado ao diretório")
+         return False
+      
+   def check_folder_import_result(self,filename):
+      
+       path = Path('data/select_result/' +str(self.time)+"/")
+       path.mkdir(parents=True, exist_ok=True)
+       str_date = 'data/select_result/'+ str(self.time)+"/" + filename
+       return str_date
+
 
      
-CheckFolder().check_folder_file("order_details.csv")
+# CheckFolder().check_folder_file("order_details.csv")
       
         
         
