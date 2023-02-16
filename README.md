@@ -9,6 +9,9 @@
 * <b>Arquivo main.py</b>: Inicialização do projeto com schedule excutando o projeto duas vezes ao dia.
 * <b>Arquivo file_get_csv.py</b>: Exportação de 13 arquivos no formato csv da base de dados Postgres para o disco local "data/postgres/{nome-tabela}/{dia-atual}".
 * <b>Arquivo file_send_csv.py</b>: Envio de 14 arquivos Csv para o Datawarehouse Mysql, juntamente com uma tabela separada "order_details.csv" no diretório "data/csv/{data-atual}" que tem o intuito de realizar uma relação de muitos para muitos no banco de dados northwind.
-
+* <b>Arquivo file_export_mysql.py</b>: Exportar consulta do banco de dados mysql que informa seus pedidos e detalhes para um arquivo csv "Orders_order_details" no seguinte diretório "data/select_import/{data-atual}
+* <b>Arquivo file_check_folder.py</b>: Arquivo que verifica se existe um diretório ou não, e envia seu caminho como parâmetro.
+* <b>Diretório db</b>: Realizo conexões e seleciono Querys com o banco de dados postgres e mysql, isso ocorre em diretórios distintos dentro do principal "db".
+* <b>Diretório data</b>: Onde ocorre a importação e exportação de arquivos csv. 
 
 
