@@ -1,6 +1,8 @@
 from file_get_csv import FileGetCsv
 from file_send_csv import FileSendCsv
 from file_export_mysql import  FileExportMysql
+import schedule
+import time
 
 
 
@@ -73,7 +75,13 @@ class Main():
         self.export.export()
         
     def process(self):
-        Main().process_day()
-        Main().process_nigth()
-        
+        try:
+            schedule.every().day.at("08:00").do(Main().process_day)
+            schedule.every().day.at("20:00").do(Main().process_nigth)
+            
+            while True:
+                schedule.run_pending()
+                time.sleep(1)
+        except Exception as e:
+            print(e)
 Main().process()
