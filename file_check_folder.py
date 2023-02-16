@@ -21,7 +21,7 @@ class CheckFolder:
       else:
          return False
      
-CheckFolder().check_folder_db("categories.csv")
+# CheckFolder().check_folder_db("customer_demographics.csv")
       
         
         

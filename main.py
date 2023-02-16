@@ -1,11 +1,10 @@
-from file_get_csv import ImportCsv
-import MySQLdb
+from file_get_csv import FileGetCsv
 
 
 
 class Main():
     def __init__(self):
-        self.import_csv = ImportCsv()
+        self.import_csv = FileGetCsv()
     
     def process(self):
     
