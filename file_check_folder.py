@@ -8,20 +8,31 @@ class CheckFolder:
       self.time = date.today()
 
     
-   def check_folder_csv(self,file):
-       path = Path('data/csv/'+ str(self.time))
+   def check_folder_csv(self,file,filename):
+       path = Path('data/postgres/'+ file + "/" +str(self.time)+"/")
        path.mkdir(parents=True, exist_ok=True)
-       str_date = 'data/csv/'+ str(self.time) + '/' + str(file)
+       str_date = 'data/postgres/'+ file + "/" +str(self.time)+"/" + filename
        return str_date
    
-   def check_folder_db(self,filename):
-      path = os.path.join('data/csv/'+ str(self.time) + "/", filename)
+   def check_folder_db(self,file,filename):
+      path = os.path.join('data/postgres/'+ file + "/" + str(self.time) + "/", filename)
       if  (os.path.exists(path)):
          return path
       else:
          return False
+      
+   def check_folder_file(self,filename):
+      
+      path = Path('data/csv/'+ str(self.time))
+      path.mkdir(parents=True, exist_ok=True)
+      path = os.path.join('data/csv/'+ str(self.time) + "/", filename)
+      if  (os.path.exists(path)):
+         return path
+      else:
+         return print("Arquivo não enviado ao diretório")
+
      
-# CheckFolder().check_folder_db("customer_demographics.csv")
+CheckFolder().check_folder_file("order_details.csv")
       
         
         
