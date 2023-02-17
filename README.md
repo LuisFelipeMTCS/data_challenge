@@ -15,8 +15,9 @@
 * <b>Diretório data</b>: Onde ocorre a importação e exportação de arquivos csv. 
   
 ## :wrench: Tecnologias utilizadas
-* <b>Linguagem de Programação</b>: Python.
-* <b>Banco de dados</b>: Mysql, Postgres. 
+ <img align="center" alt="" height="30" width="40" src="https://icongr.am/devicon/mysql-original.svg?size=148&color=a44141"><img align="center" alt="" height="30" width="40" src="https://icongr.am/devicon/postgresql-original.svg?size=148&color=262626"><img align="center" alt="Rafa-Python" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg">
+
+
 
 
   
