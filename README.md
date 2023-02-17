@@ -16,6 +16,13 @@
   
 ## :wrench: Tecnologias utilizadas
  <img align="center" alt="" height="30" width="40" src="https://icongr.am/devicon/mysql-original.svg?size=148&color=a44141"><img align="center" alt="" height="30" width="40" src="https://icongr.am/devicon/postgresql-original.svg?size=148&color=262626"><img align="center" alt="Rafa-Python" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg">
+  
+## :rocket: Rodando o projeto
+Para rodar o repositório é necessário clonar o mesmo e ajustar suas bases de dados, para inicializar o projeto é necessário utilizar o seguinte comando:
+```
+  python3 main.py
+```
+
 
 
 
